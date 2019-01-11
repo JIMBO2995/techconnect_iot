@@ -8,16 +8,17 @@ import  { switchMap,  } from'rxjs/operators';
 import  { Md5 } from'ts-md5/dist/md5';
 
 interface User {
-  uid: string,
-  email: string,
-  photoURL?: string,
+  uid: string ;
+  email: string ;
+  photoURL?: string ;
   displayName?: string
 }
 
 @Injectable()
 export class AuthService {
 
-  user: Observable<User>
+  user: Observable<User>; 
+  authState: any = null ;
 
   constructor( private afAuth: AngularFireAuth,
                private afs: AngularFirestore,
@@ -33,8 +34,16 @@ export class AuthService {
                       return of(null);
                     }
                   }));
+                  this.afAuth.authState.subscribe(data=>this.authState = data)
                 }
 
+       get authenticated():boolean {
+            return this.authState !== null; 
+       }
+
+       get currentUserId(): string {
+         return this.authenticated ? this.authState.uid : null ;
+       }
       emailSignIn( email: string, password: string){
        return this.afAuth.auth.signInWithEmailAndPassword( email, password)
               .then( () => {
