@@ -1,0 +1,15 @@
+.user-title{
+    margin-left: 1em; 
+}
+    
+mat-card {
+    margin: 10px ;
+    width: 300px ;
+}
+mat-card-content , mat-card-actions {
+ margin: 1em; 
+}
+.user-photo{
+    height:50px;
+    width: 50px;
+}

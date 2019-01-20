@@ -2,5 +2,8 @@ export class User {
     uid: string ;
     email: string ;
     photoURL?: string ;
-    displayName?: string
+    displayName?: string;
+    website?: string;
+    location?: string;
+    bio?: string ;
 }
