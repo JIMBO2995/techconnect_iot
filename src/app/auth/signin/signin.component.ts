@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { Observable } from 'rxjs';
 import {SharedModule } from '../../shared/shared.module';
 import { AuthService} from '../../core/auth.service'
+import { User } from 'src/app/user/user.model';
 
 
 @Component({
@@ -43,9 +44,14 @@ export class SigninComponent implements OnInit {
   }
   signIn(){
     return this.auth.emailSignIn( this.email.value, this.password.value )
-           .then(user => {
-             if( this.signInForm.valid){
+           .then(user  => {
+             if( this.signInForm.valid ){
                this.router.navigate(['/'])
               }
-         }) }
+           })
+           .catch( error => {
+             console.log(error.message)
+             this.router.navigate(['/signin'])
+           }) 
+        }
  }
