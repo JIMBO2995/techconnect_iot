@@ -5,6 +5,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
+import {PostModule} from "../post/post.module"
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   declarations: [UserDashboardComponent, UserDetailComponent, UserListComponent, UserListItemComponent],
   imports: [
     SharedModule,
+    PostModule,
     RouterModule.forChild(routes)
   ],
   exports: [

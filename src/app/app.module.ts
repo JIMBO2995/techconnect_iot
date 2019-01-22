@@ -8,6 +8,7 @@ import {MaterialModule} from './material.module';
 import { RoutingModule } from './routing.module';
 
 import { environment } from 'src/environments/environment';
+import { PostModule } from './post/post.module';
 
 
 
@@ -21,7 +22,8 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     MaterialModule,
     CoreModule,
-    RoutingModule
+    RoutingModule,
+    PostModule
     
   ],
   providers: [],
