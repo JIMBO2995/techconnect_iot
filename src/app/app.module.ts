@@ -9,6 +9,7 @@ import { RoutingModule } from './routing.module';
 
 import { environment } from 'src/environments/environment';
 import { PostModule } from './post/post.module';
+import { GalleryModule } from './gallery/gallery.module';
 
 
 
@@ -23,7 +24,8 @@ import { PostModule } from './post/post.module';
     MaterialModule,
     CoreModule,
     RoutingModule,
-    PostModule
+    PostModule,
+    GalleryModule
     
   ],
   providers: [],

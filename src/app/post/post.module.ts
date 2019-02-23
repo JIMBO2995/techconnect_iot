@@ -9,7 +9,7 @@ import { PostService } from './post.service';
 
 const routes: Routes = [
 { path: "blog", component: PostListComponent},
-{ path: "blog/:id" , component: PostListItemComponent}
+{ path: "blog/:id" , component: PostDetailComponent}
 ]
 
 @NgModule({

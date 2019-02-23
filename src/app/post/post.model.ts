@@ -3,9 +3,10 @@ export class Post {
     image: any; 
     title: string ;
     author: string ;
+    authorId: string ;
     content: string ;
     draft: boolean ;
-    claps: number ;
+    trending: number ;
     published: Date ;
 
 

@@ -1,10 +1,11 @@
 mat-card{
     margin: .5em ;
-    max-width: 600px ;
-    margin: 16px auto ;
+    max-width: 800px ;
+    margin: auto ;
+    padding: 0;
 }
-mat-form-field{
-    width: 100% ;
+mat-card-actions{
+   padding:.5em;
 }
 img{
     width: 100%;
