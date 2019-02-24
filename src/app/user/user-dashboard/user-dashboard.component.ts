@@ -13,6 +13,9 @@ import { UserService } from '../user.service';
 export class UserDashboardComponent implements OnInit {
   editing : false ;
   user : User ; 
+  path: string ;
+  meta: object ;
+  uploadType: boolean; 
   task :AngularFireUploadTask;
 
   constructor( private auth: AuthService, 
@@ -23,10 +26,20 @@ export class UserDashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getUser();
+    this.setUploadData();
   }
 
   getUser(){
       return this.auth.user.subscribe( user => { this.user = user});
+    }
+
+    setUploadData(){
+       return this.auth.user.subscribe( user => {
+         this.path = `users/${user.uid}/gallery`;
+         this.meta = { uploader: user.uid, website: 'http://msn.com'};
+         this.uploadType = true ;
+
+       })
     }
 
   updateProfile(){

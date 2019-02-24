@@ -1,0 +1,33 @@
+<mat-card>
+  <h3>Add a post</h3>
+  <section>
+    <input #resetMe type="file" name="file" id="file" (change)="uploadPostImage($event)">
+    <div [hidden]="!uploadPercent || !imageURL">
+      <mat-progress-bar mode="determinate" value="{{ uploadPercent | async }}"></mat-progress-bar>
+    </div>
+    <a [href]="downloadURL | async" [hidden]="!downloadURL || !imageURL">{{ downloadURL | async }}</a>
+
+    <div class="image-preview" [hidden]="!imageURL">
+      <img [src]="imageURL || '//:0' ">
+    </div>
+
+  </section>
+  <section>
+    <form [formGroup]="postForm" (ngSubmit)="savePost()">
+      <mat-form-field>
+        <input matInput placeholder="post title" formControlName="title" >
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Post content"
+         formControlName="content" >
+        </textarea>
+      </mat-form-field>
+      <mat-slide-toggle formControlName="draft"> ?Publish </mat-slide-toggle>
+      <button mat-raised-button  type="submit" color="accent">Save</button>
+     </form>
+  </section>
+</mat-card>
+
+
+
+

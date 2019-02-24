@@ -1,0 +1,24 @@
+mat-form-field{
+    width: 100%;
+}
+mat-card{
+    margin: .5em ;
+    max-width: 600px ;
+    margin: 16px auto ;
+}
+mat-card-actions{
+    padding: .5em
+}
+img{
+    width: 100%;
+    min-height: 50px;
+    background-color: #f6f6f6 ;
+}
+.preview-image{
+    min-height: 50px ;
+    width: 100% ;
+    background-color: #f6f6f6; 
+}
+button{
+    margin: 5px;
+}

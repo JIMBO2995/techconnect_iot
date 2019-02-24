@@ -1,0 +1,9 @@
+<mat-card *ngIf="post">
+  <img src="{{post.image}}" alt="post.title" [hidden]="post.image == null">
+<mat-card-content>
+  <mat-card-title>{{post.title}}</mat-card-title>
+  <mat-card-subtitle>Posted by{{post.author}} Posted On :   {{post.published | fromNow }}</mat-card-subtitle>
+   <p>{{post.id}}</p>
+   <p>{{post.content}}</p>
+</mat-card-content>
+</mat-card>

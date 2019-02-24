@@ -1,0 +1,14 @@
+mat-card{
+    margin: .5em ;
+    max-width: 800px ;
+    margin: auto ;
+    padding: 0;
+}
+mat-card-actions{
+   padding:.5em;
+}
+img{
+    width: 100%;
+    min-height: 50px;
+    background-color: #f6f6f6 ;
+}
