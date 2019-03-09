@@ -13,7 +13,7 @@ import { ChatThreadsComponent } from './chat-threads/chat-threads.component';
  
 const routes: Routes = [
       { path:'chat' , component: ChatListComponent },
-      { path: 'chat/detail', component: ChatDetailComponent}
+      { path: 'chat/:id', component: ChatDetailComponent}
 ]
 
 @NgModule({

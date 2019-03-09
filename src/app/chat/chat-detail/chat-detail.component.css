@@ -7,7 +7,7 @@ mat-toolbar{
 .chat-feed{
     overflow-y: scroll ;
     overflow:auto; 
-    height: calc(100vh - 120px) ; 
+    height: calc(100vh - 150px) ; 
 }
 
 .chat-input{

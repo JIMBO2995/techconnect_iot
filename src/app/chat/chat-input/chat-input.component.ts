@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import { AuthService} from '../../core/auth.service';
+
+import { MessageService} from '../message.service';
+import { Message} from '../message.model';
+import { ThreadService } from '../thread.service';
 
 @Component({
   selector: 'app-chat-input',
@@ -6,10 +12,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-input.component.css']
 })
 export class ChatInputComponent implements OnInit {
-
-  constructor() { }
+  message: string; 
+  constructor(      
+               private route: ActivatedRoute,
+               private auth: AuthService,
+               private threadService: ThreadService,  
+               private messageService: MessageService ) { }
 
   ngOnInit() {
   }
+
+  send(): void{
+    const channelId = this.route.snapshot.paramMap.get('id');
+    const photoURL = this.auth.authState.photoURL;
+    const sender = this.auth.authState.displayName || this.auth.authState.email;
+    const senderId = this.auth.currentUserId; 
+    const message = this.message;
+    this.messageService.sendMessage( channelId, photoURL, sender, senderId, message) 
+    this.saveLast( channelId, message);
+    this.message = "" ;
+  }
+
+  saveLast(channelId, message){
+    this.threadService.saveLastMessage(channelId, message)
+  }
+
+  handleSubmit(event){
+    
+    if(event.keyCode === 13){
+      
+      this.send();
+    }
+  }
+
+
 
 }
