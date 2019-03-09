@@ -1,0 +1,5 @@
+<mat-form-field>
+  <input  matInput placeholder="Send Message" [(ngModel)]="message" 
+          (keydown)="handleSubmit($event)">
+  <mat-icon matSuffix (click)="send()">send</mat-icon>
+</mat-form-field>

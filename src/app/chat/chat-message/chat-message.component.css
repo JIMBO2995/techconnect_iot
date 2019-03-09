@@ -1,0 +1,17 @@
+/* img{
+    width: 50px;
+    height: auto ;
+    background-color: #f6f6f6 ;
+} */
+
+.inbound{
+    background-color: lightcyan ; 
+}
+
+.outbound{
+    background-color: lightgrey ; 
+}
+
+img{
+    order: 10;
+}

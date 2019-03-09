@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item [ngClass]="{'inbound': incoming, 'outbound': !incoming }" >
+    <img matListAvatar  [src]=" message.photoURL || '//:0'"  alt="{{message.sender}}">
+    <p matLine>{{message.content}}</p>
+    <p matLine><small>{{message.timestamp | fromNow}}</small></p>
+  </mat-list-item>
+</mat-list>
